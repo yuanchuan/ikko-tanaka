@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
-var join = require('path').join
+var join = require('path').join;
 var compose = require('fcompose');
 
 var dir = {
@@ -33,10 +33,9 @@ if (fs.existsSync(join(dir.src, name))) {
     join(dir.template, 'graph.' + type),
     join(dir.src, name, name + '.' + type),
     function(content, next) {
-      next((type == 'html') 
-        ? content.toString().replace(/{{\s*name\s*}}/g, name) 
-        : ''
-      )
+      next(
+        content.toString().replace(/{{\s*name\s*}}/g, name) 
+      );
     }
   );
 });
