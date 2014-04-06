@@ -28,7 +28,7 @@ if (fs.existsSync(join(dir.src, name))) {
   return console.error(message.exists);
 }
 
-['html', 'css'].forEach(function(type) {
+['html', 'less'].forEach(function(type) {
   compose(
     join(dir.template, 'graph.' + type),
     join(dir.src, name, name + '.' + type),

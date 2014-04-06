@@ -11,6 +11,11 @@
   transform: @value;  
 }
 
+.linear-gradient(@value) {
+  background-image: -webkit-linear-gradient(@value);
+  background-image: -moz-linear-gradient(@value);
+  background-image: linear-gradient(@value);
+}
 
 .size(@size) {
   width: @size;
@@ -20,4 +25,13 @@
 .size(@width, @height) {
   width: @width;
   height: @height;
+}
+
+.clearfix() {
+  &:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
 }
