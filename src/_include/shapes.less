@@ -1,0 +1,11 @@
+.half(@value) {
+  @half: @value / 2;      
+}
+
+.semi-circle(@size, @bg) {
+  .half(@size);
+  width: @size;
+  height: @half;
+  background: #000;
+  border-radius: @half @half 0 0 ;
+}
