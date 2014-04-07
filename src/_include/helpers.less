@@ -1,5 +1,5 @@
 
-.border-radius() {
+.border-radius(@value) {
   -webkit-border-radius: @arguments;
   -moz-border-radius: @arguments;
   border-radius: @arguments;
@@ -9,6 +9,11 @@
   -webkit-transform: @value;
   -moz-transform: @value;  
   transform: @value;  
+}
+.transform-origin(@value) {
+  -webkit-transform-origin: @arguments;
+  -moz-transform-origin: @arguments;
+  transform: @arguments;
 }
 
 .linear-gradient(@value) {
