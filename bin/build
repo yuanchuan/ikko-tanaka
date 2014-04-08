@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var path = require('path');
+var less = require('less');
+var compose = require('fcompose');
+
+
+var join = path.join;
+var dir = {
+  src:      join(__dirname, '../src'),
+  template: join(__dirname, '../template'),
+};
+
+var isError = function(obj) {
+  return Object.prototype.toString.call(obj) === '[object Error]';
+}
+
+var skipFirstParam = function(fn, context) {
+  return function() {
+    var e = arguments[0];
+    if (isError(e)) {
+      console.error(e.message);
+      [].push.call(arguments, '');
+    }
+    fn.apply(context, [].slice.call(arguments, 1));
+  }
+}
+ 
+var read = function(file, fn) {
+  return fs.readFile(file, 'utf-8', skipFirstParam(fn));
+}
+
+var getBody = function(file, fn) {
+  var regBody = /<body.*>(\s*(.|\n)*\s*)<\/body>/g; 
+  read(file, function(html) {
+    html.replace(regBody, skipFirstParam(fn));
+  });
+}
+
+var less2css = function(file, fn) {
+  read(file, function(content) {
+    less.render(content, { paths: [path.dirname(file)] }, skipFirstParam(fn));
+  });
+}
+
