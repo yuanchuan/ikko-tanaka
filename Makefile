@@ -6,6 +6,9 @@ build:
 
 new:
 	@$(BIN)/new
+
+dep:
+	@$(BIN)/deploy
  
 clean:
 	@rm -rf $(OUT)
@@ -13,6 +16,6 @@ clean:
 install link: 
 	@npm $@
 
-all: clean install build
+all: clean install build dep
 
 .PHONY: install new build clean
