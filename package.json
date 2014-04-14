@@ -1,0 +1,16 @@
+{
+  "name": "ikko-tanaka",
+  "version": "0.0.0",
+  "description": "Ikko Tanaka's graphic design imitating in plain html & css",
+  "readmeFilename": "REAMDE.md",
+  "dependencies": {
+    "fcompose": "*",
+    "find": "*",
+    "less": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuanchuan/ikko-tanaka"
+  }
+}
+ 
