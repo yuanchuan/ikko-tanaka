@@ -11,7 +11,7 @@ var join = path.join;
 var dir = {
   src:      join(__dirname, '../src'),
   template: join(__dirname, '../template'),
-  build:    join(__dirname, '../build')
+  build:    join(__dirname, '../release')
 };
 
 var isError = function(obj) {

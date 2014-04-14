@@ -1,13 +1,19 @@
 BIN = ./bin
-OUT = ./build
+LIB = ./node_modules
+OUT = ./release
 
-build: 
+build: $(OUT)
+
+$(OUT): $(LIB) 
 	@$(BIN)/build
 
-new:
+$(LIB): 
+	@npm install
+ 
+new: $(LIB)
 	@$(BIN)/new
 
-dep:
+deploy: $(OUT)
 	@$(BIN)/deploy
  
 clean:
@@ -16,6 +22,6 @@ clean:
 install link: 
 	@npm $@
 
-all: clean install build dep
+all: clean install build deploy
 
-.PHONY: install new build clean
+.PHONY: build install clean

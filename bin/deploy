@@ -1,7 +1,7 @@
 #!/bin/sh
 
 git checkout gh-pages
-cp build/* ./
+cp release/* ./
 git add index*
 git commit -am 'sync'
 git push origin gh-pages
