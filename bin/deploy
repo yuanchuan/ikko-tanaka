@@ -2,6 +2,7 @@
 
 git checkout gh-pages
 cp build/* ./
-git commit -a -m 'sync'
+git add index*
+git commit -am 'sync'
 git push origin gh-pages
 git checkout master
