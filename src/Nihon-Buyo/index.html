@@ -5,7 +5,10 @@
   <title>nihon</title>
   <style>
     html, body { height: 100%; margin: 0; padding: 0; }
+    h3, p { margin: 0; }
     body { display: flex; justify-content: center; align-items:center; }
+    .meta { position: absolute; right: 5px; bottom: 5px; font-size: 12px;} 
+    .meta a { display: inline-block; max-width: 200px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
   </style>
   <link rel="stylesheet" href="index.less" />
 </head>
@@ -49,9 +52,16 @@
     <div class="cell"></div>
     <div class="cell"></div>
     <div class="cell"></div> 
-
-
   </div>
+
+  <div class="meta">
+    <h3>Nihon Buyo</h3> 
+    <p class="source">
+      <a href="http://www.designishistory.com/1960/ikko-tanaka/">
+        http://www.designishistory.com/1960/ikko-tanaka/
+      </a>
+    </p>
+  </div> 
 
 </body>
 </html>

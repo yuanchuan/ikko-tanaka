@@ -6,6 +6,8 @@
   <style>
     html, body { height: 100%; padding: 0; margin: 0; }
     body { display: flex; justify-content: center; align-items:center; }
+    .meta { position: absolute; right: 5px; bottom: 5px; font-size: 12px;} 
+    .meta a { display: inline-block;max-width: 200px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;} 
   </style>
   <link rel="stylesheet" href="index.less" />
 </head>
@@ -15,5 +17,11 @@
     <!-- here we go -->
   </div>
 
+  <div class="meta">
+    <h3>{{ name }}</h3> 
+    <p class="source">
+      <a href="#"></a>
+    </p>
+  </div>
 </body>
 </html>
