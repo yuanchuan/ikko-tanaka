@@ -32,13 +32,16 @@ body {
     left: 0;
     top: 0;
     width: @aside-width;
-    background: #f5f5f5;
   }
   .content {
-    padding: 50px 20px 0 0;
+    padding: 0px 20px 0px 0;
+    height: @aside-width;
+    position: relative;
   }
   h1 {
     text-align: right;
+    padding-top: 80px;
+    margin-top: 0;
     font-size: 2em;
     strong {
       display: block;
@@ -54,20 +57,44 @@ body {
 }
 
 .graphs {
-  height: 100%;
+  margin-left: 50px;
+  padding-bottom: 80px;
+}
+
+.graph, .meta {
+  display: inline-block;
 }
 
 .page {
-  height: 100%;
-  display: flex;
-  -webkit-display: flex;
-  justify-content: center;
-  align-items: center;
-  &:nth-child(odd) {
-    background: #f0f0f0;
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.meta {
+  margin-left: 20px;
+  position: relative;
+  top: -20px;
+  h3 {
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 1em;
+    color: #333;
   }
-  &:nth-child(even) {
-    background: #eaeaea;
+  .source {
+    margin: 0;
+    font-size: .8em;
+    a {
+      color: #555;
+      display: inline-block;
+      max-width: 240px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      &:hover {
+        text-decoration: none;  
+        color: #666;
+      }
+    }
   }
 }
 
