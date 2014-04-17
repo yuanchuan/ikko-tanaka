@@ -81,7 +81,7 @@ find
         next(
           content.toString()
             .replace(/\.less/g, '.css')
-            .replace(/{{\s*content\s*}}/g, htmls.join('\n'))        
+            .replace(/{{\s*content\s*}}/g, htmls.reverse().join('\n'))        
         );
       }); 
   });
