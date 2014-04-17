@@ -14,7 +14,6 @@ body {
 .main-wrapper {
   height: 100%;
   margin-left: @aside-width;
-  min-width: 730px;
 }
 
 .wrapper {
@@ -61,6 +60,10 @@ body {
   padding-bottom: 80px;
 }
 
+.graph {
+  margin-right: 20px;
+}
+
 .graph, .meta {
   display: inline-block;
 }
@@ -71,9 +74,9 @@ body {
 }
 
 .meta {
-  margin-left: 20px;
   position: relative;
   top: -20px;
+  margin-top: 10px;
   h3 {
     margin-bottom: 0;
     padding: 0;
@@ -86,7 +89,7 @@ body {
     a {
       color: #555;
       display: inline-block;
-      max-width: 240px;
+      width: 240px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
