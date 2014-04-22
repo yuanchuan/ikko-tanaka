@@ -1,0 +1,33 @@
+@import "../_include/mixins";
+
+@black: #00000;
+@blue: #20afe9;
+@red: #e62128;
+@pin: #de1d88;
+@gray: #747d7c;
+@deep-blue: #2a3e95;
+@deep-green: #189d4e;
+@initial-width: 390px;
+@forehead-radius: (@initial-width / 2.5);
+
+.graph-Tiba-91 {
+  background: @gray;
+  width: @initial-width;
+  overflow: hidden;
+  .forehead {
+    .size(@forehead-radius); 
+    background: @blue;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    &:before {
+      content: '';
+      display: inline-block;
+      margin-top: 2px;
+      position: relative;
+      .semi-circle((@forehead-radius / 3), @black);
+      z-index: 10;
+    }
+  }
+
+}
