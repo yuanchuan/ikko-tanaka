@@ -21,27 +21,27 @@
   padding-top: 30px;
   position: relative;
   .forehead {
-    z-index: 4;
     .size(@forehead-radius - 10); 
+    .border-radius(50%);
+    z-index: 4;
     background: @blue;
-    border-radius: 50%;
     text-align: center;
     margin: 0 auto;
     position: relative;
     &:before {
+      .semi-circle((@forehead-radius / 3), @black);
       position: relative;
       z-index: 5;
       content: '';
       display: inline-block;
       top: 2px;
-      .semi-circle((@forehead-radius / 3), @black);
     }
   }
   .hair {
+    .border-radius(50%);
+    .size(@hair-radius); 
     z-index: 1;
     background: @black;
-    border-radius: 50%;
-    .size(@hair-radius);
     position: absolute;
     top: 50px;
     left: 50%;
@@ -51,11 +51,11 @@
   .face {
     .transform(@value: perspective(22em) rotateX(26deg));
     .size(@face-width, @face-height); 
+    .border-radius(0 0 @face-width / 2 @face-width / 2);
     background: #fff;
     margin: -(@face-width - 50) auto 0;
     position: relative;
     z-index: 2;
-    border-radius: 0 0 @face-width / 2 @face-width / 2;
     overflow: hidden;
   }
   .face-inner {
@@ -71,10 +71,10 @@
     .left-part, .right-part {
       .size(20px);
       .transform(@value: rotateY(26deg));
+      .border-radius(100%);
       background: @red;
-      border-radius: 100%;
       position: absolute;
-      top: 0;
+      top: 0;  
       &:after {
         content: '';
         position: absolute;
@@ -103,8 +103,8 @@
     height: 100%;
     .left-part, .right-part{
       .transform(@value: rotateY(26deg) rotate(45deg));
-      border-radius: 100%;
       .size(@forehead-radius + 10);
+      .border-radius(100%);
       border: @ribbon-width solid @pink;
       border-bottom-color: transparent;
       border-right-color: transparent;
@@ -118,22 +118,22 @@
     }
   }
   .mouth {
+    .semi-circle(@ribbon-width * 2, @red);
+    .transform(@value: rotateY(26deg));
     position: absolute;
     bottom: 80px;
     left: 50%;
-    .semi-circle(@ribbon-width * 2, @red);
-    margin-left: -@ribbon-width; 
-    .transform(@value: rotateY(26deg));
+    margin-left: -@ribbon-width;  
   }
   .chin {
+    .size(@forehead-radius / 1.2);
+    .transform(@value: rotateY(26deg)); 
+    .border-radius(50%);
     position: absolute;
     bottom: -110px;
+    left: 50%; 
     border: @ribbon-width solid @pink;
-    .size(@forehead-radius / 1.2);
-    border-radius: 50%;
-    left: 50%;
     margin-left: -(@forehead-radius / 1.2 + @ribbon-width * 2) / 2;
-    .transform(@value: rotateY(26deg));
   }
   .body {
     z-index: 1;
@@ -143,9 +143,9 @@
     text-align: center;
     .left-part, .right-part {
       .size(@forehead-radius / 1.25);
+      .transform(@value: rotate(45deg));
       position: relative;
       display: inline-block;
-      .transform(@value: rotate(45deg));
     }
     .left-part {
       background: @deep-blue;
