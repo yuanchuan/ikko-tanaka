@@ -72,7 +72,7 @@
       left: 50%;
       bottom: 15%;
       margin-left: -@half / 3;
-      .transform(@value: rotate(135deg));
+      transform: rotate(135deg);
     }
     &:nth-child(9):after {
       border-left-color: #000;
@@ -86,7 +86,7 @@
       border-bottom: (@half / 2) solid #aa272f;
       width: @half + @half / 2;
       height: @half + @half / 2 ;
-      .transform(@value: rotate(-45deg));
+      transform: rotate(-45deg);
       margin-top: -@half * 0.414;
       outline: 1px solid transparent;
     }
@@ -98,11 +98,11 @@
     }
     .left-eye {
       left: 0px;
-      .transform(@value: rotate(-150deg));
+      transform: rotate(-150deg);
     }
     .right-eye {
       right: 0px;
-      .transform(@value: rotate(150deg));
+      transform: rotate(150deg);
     }
     &:nth-child(10),
     &:nth-child(11),

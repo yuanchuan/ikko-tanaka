@@ -34,23 +34,23 @@
       left: 0;
       bottom: 0;
       .size(@initial-cell-size - 15);
-      .border-radius(50%);
+      border-radius: 50%;
       background: #2cc1c8;
     }
     &:nth-child(5) {
       background-color: #fff;
     }
     &:nth-child(7) {
-      .linear-gradient(@value: e(
-        "-135deg, #151515 50%, transparent 50%"
-      ))
+      background-image: linear-gradient(
+        -135deg, #151515 50%, transparent 50%
+      );
     }
     &:nth-child(8) {
       background-color: #fff;
       &:after, &:before{
         content: ' ';
         position: absolute;
-        .border-radius(50%);
+        border-radius: 50%;
         .size(20px);
         left: 50%;
       }
@@ -69,20 +69,20 @@
       }
     }
     &:nth-child(9) {
-      .linear-gradient(@value: e(
-        "135deg, #151515 50%, transparent 50%"
-      ));
+      background-image: linear-gradient(
+        135deg, #151515 50%, transparent 50%
+      );
     }
     &:nth-child(10) {
-      .linear-gradient(@value: e(
-        "-45deg, #1f3598 50%, transparent 50%"
-      ));
+      background-image: linear-gradient(
+        -45deg, #1f3598 50%, transparent 50%
+      );
     }
     &:nth-child(11) {
       background-color: #fff;
-      .linear-gradient(@value: e(
-        "-45deg, #009373 48.5%, transparent 48.5%"
-      ));
+      background-image: linear-gradient(
+        -45deg, #009373 48.5%, transparent 48.5%
+      );
     }
     &:nth-child(12) {
       background-color: #ea0a2c;
@@ -102,7 +102,7 @@
     top: 0;
     background-color: #ef193b;
     .size(@initial-eyeball-size);
-    .border-radius(50%);
+    border-radius: 50%;
     &:after {
       content: ' ';
       position: absolute;
@@ -113,26 +113,26 @@
   .left-eye {
     left: 0;
     &:after {
-      .transform(@value: translateX(5px) rotate(30deg)); 
+      transform: translateX(5px) rotate(30deg); 
     }
   }
   .right-eye {
     right: 0;
     &:after {
-      .transform(@value: translateX(-5px) rotate(-30deg)); 
+      transform: translateX(-5px) rotate(-30deg); 
     }
   }
   .cheek {
     height: 25%;
     margin-top: 2%;
-    .linear-gradient(@value: e(
-      "#ffcde8, #fff"
-    )); 
+    background-image: linear-gradient(
+      #ffcde8, #fff
+    ); 
   }
   .info {
     padding: 5px 2px;
-    .transform-origin(top left);
-    .transform(@value: scale(.8));
+    transform-origin: top left;
+    transform: scale(.8);
     h1, h2, p {
       margin: 0; 
       padding: 0;

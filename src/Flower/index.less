@@ -60,15 +60,15 @@
       width: @radius * 1.8;
       height: @radius * 1.8;
       border-radius: 100% 0;
-      .transform(@value: skew(-30deg, -30deg));
+      transform: skew(-30deg, -30deg);
     }
     &:after {
-      .transform(@value: rotate(-10deg) skew(-30deg, -30deg));
+      transform: rotate(-10deg) skew(-30deg, -30deg);
       margin-left: 30px;
     }
     &:before {
       border-radius: 0 100%;
-      .transform(@value: rotate(10deg) skew(30deg, 30deg));
+      transform: rotate(10deg) skew(30deg, 30deg);
       margin-left: -@radius * 1.8 - 30;
     }
   }

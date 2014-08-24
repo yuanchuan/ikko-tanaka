@@ -22,7 +22,7 @@
     .circle {
       background: #d84825;  
       position: absolute;
-      .border-radius(50%);
+      border-radius: 50%;
       .size(@initial-width / 7);
       top: -10px;
       left: 18px;
@@ -61,11 +61,11 @@
       }
       &:before {
         left: 15px;
-        .transform(@value: rotate(20deg)); 
+        transform: rotate(20deg); 
       }
       &:after {
         right: 15px;
-        .transform(@value: rotate(-20deg)); 
+        transform: rotate(-20deg); 
       }
     }
 
@@ -75,7 +75,7 @@
       &:after, &:before {
         content: '';
         display: inline-block;
-        .border-radius(50%);
+        border-radius: 50%;
         position: absolute;
         left: 50%;
       }
@@ -99,7 +99,7 @@
     position: absolute;
     left: @body-offset-left;
     bottom: -@body-offset-bottom;
-    .border-radius(50%);
+    border-radius: 50%;
     background: #6138b0;
     box-shadow: 3px -20px 0 #f7e45a;
     &:after {
@@ -109,7 +109,7 @@
       top: 8%; 
       background: #5ebf5e; 
       .size(@body-circle-radius);
-      .border-radius(50%);
+      border-radius: 50%;
     
     }
   }

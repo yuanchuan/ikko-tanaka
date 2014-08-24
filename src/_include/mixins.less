@@ -1,2 +1,30 @@
-@import "helpers.less";
-@import "shapes.less";
+.size(@size) {
+  width: @size;
+  height: @size;
+}
+
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.half(@value) {
+  @half: @value / 2;      
+}
+
+.semi-circle(@size, @bg) {
+  .half(@size);
+  width: @size;
+  height: @half;
+  background: @bg;
+  border-radius: @half @half 0 0 ;
+}
+
+.clearfix() {
+  &:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+}

@@ -5,6 +5,7 @@ var path = require('path');
 var less = require('less');
 var compose = require('fcompose');
 var find = require('find');
+var prefixer = require('autoprefixer');
 
 
 var join = path.join;
@@ -52,6 +53,10 @@ var less2css = function(file, fn) {
   });
 };
 
+var autoprefixer = function(css) {
+  return prefixer.process(css).css;
+};
+
 
 var styles = [];
 var htmls = [];
@@ -59,7 +64,7 @@ var htmls = [];
 find
   .eachdir(/^[^_]/, dir.src, function(src) {
     less2css(join(src, 'index.less'), function(css) {
-      styles.push(css);    
+      styles.push(autoprefixer(css || ''));    
     });
     getBody(join(src, 'index.html'), function(html) { 
       htmls.push('<section class="page">' + html + '</section>');
@@ -71,7 +76,7 @@ find
       join(dir.build, 'index.css'),
       function(content, next) {
         less2css(join(dir.template, 'index.less'), function(css) {
-          next(css + styles.join('\n'));
+          next(autoprefixer(css || '') + styles.join('\n'));
         });
       });
     compose(
