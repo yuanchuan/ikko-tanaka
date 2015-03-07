@@ -6,7 +6,7 @@
   "dependencies": {
     "fcompose": "*",
     "find": "*",
-    "less": "*",
+    "less": "^1.7.0",
     "autoprefixer": "^3.0.0"
   },
   "repository": {
