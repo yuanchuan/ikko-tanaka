@@ -1,0 +1,145 @@
+@import "../_include/mixins";
+
+@initial-width: 390px;
+@initial-height: 490px;
+@dy: @initial-height - (@initial-height / 2.3);
+@dx: @dy * .89;
+
+
+@pink: #E15BAA; 
+@blue: #4552BC;
+@yellow: #FADC4F;
+@red: #F14515; 
+@green: #2A9E99;
+@black: #000000;
+
+.graph-Ginza-Saison-Theatre {
+  width: @initial-width;
+  height: @initial-height;
+  background: @black;
+
+  .head {
+    width: @dx;
+    height: @dy;
+    margin: 25% auto 0;
+    background: @black;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 28%;
+      z-index: 5;
+    }
+    &:before {
+      .size(40px);
+      background: @green;
+      left: 22%;
+      border-radius: 50%;
+    }
+    &:after {
+      .size(30px);
+      right: 23%;
+      background: @black;
+      transform: translateY(20%) rotate(45deg);
+    }
+  }
+
+  .ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 20px solid @pink;
+    border-radius: 50%;
+  }
+  .mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 50%;
+    height: 100%;
+    background: @blue;
+  }
+  .belt {
+    width: 200%;
+    height: @dx / 6;
+    position: absolute;
+    background: @yellow;
+    z-index: 2;
+    bottom: 38.7%;
+    left: -50%;
+    transform-origin: 50% 38.2%;
+    transform: rotate(-30deg);
+    &:after, &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 4px;
+      left: 0;
+      background: @black;
+      transform: translateY(-50%);
+    }
+    &:after {
+      top: 33.333%;
+    }
+    &:before {
+      top: 66.666%;
+    }
+  }
+  .mouse {
+    position: absolute;  
+    .size(@dx);
+    z-index: 4;
+    top: 61.8%;
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      .size(@dx);
+      background: @black;
+      z-index: 1;
+    }
+    &:after {
+      transform-origin: 0 0 ;
+      left: 50%;
+      transform: rotate(30deg);
+    }
+    &:before {
+      left: -50%;
+      transform-origin: 100% 0;
+      transform: rotate(-30deg);
+    } 
+  }
+  .tongue {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    .size(@dx / 3.2);
+    background: @red;
+    transform: translateX(-50%);
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      .size(@dx / 3.2, @dx / 3.2 + 20);
+      z-index: 6;
+      background: @black;
+    }
+    &:before {
+      left: -100%;
+      transform-origin: 100% 0;
+      transform: rotate(-30deg);
+    }
+    &:after {
+      transform-origin: 0 0;
+      transform: rotate(30deg); 
+      right: -100%;
+    } 
+  }
+
+}
