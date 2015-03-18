@@ -36,33 +36,42 @@
     .size((@initial-cell-size));
 
     &:nth-child(1) {
-      .cell-triangle(transparent, @purple, @black, transparent);
-      &:after {
-        right: 0;
-        bottom: 0;
-      }
+      background-image: 
+        linear-gradient(135deg, @yellow 50%, transparent 50%),
+        linear-gradient(-135deg, @purple 50%, transparent 50%),
+        linear-gradient(45deg, @black 50%, transparent 50%);
     }
     &:nth-child(2) {
       background: @black;
     }
     &:nth-child(3) {
-      .cell-triangle(transparent, transparent, @black, @purple);
+      background-image: 
+        linear-gradient(-135deg, @yellow 50%, transparent 50%),
+        linear-gradient(135deg, @purple 50%, transparent 50%),
+        linear-gradient(45deg, @black 50%, transparent 50%); 
     }
     &:nth-child(4) {
       background: @black;
     }
     &:nth-child(5) {
       background: @blue;
-      .cell-triangle(@pink, @white, @white, @white);
       &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: @pink;
         top: (@initial-cell-size / 2);
+        background-image: 
+          linear-gradient(45deg, @white 50%, transparent 50%),
+          linear-gradient(-45deg, @white 50%, transparent 50%);
       }
     }
     &:nth-child(6) {
       background: @black;
     }
     &:nth-child(7) {
-      .cell-triangle(@black, @black, transparent, transparent);
+      background: linear-gradient(-135deg, @black 50%, transparent 50%);
     }
     &:nth-child(8) {
       background: @white;
@@ -75,13 +84,15 @@
       }
     }
     &:nth-child(9) {
-      .cell-triangle(@black, transparent, transparent, @black);
+      background: linear-gradient(135deg, @black 50%, transparent 50%);
     } 
     &:nth-child(10) {
-      .cell-triangle(transparent, @red, @red, transparent);
+      background: linear-gradient(-45deg, @red 50%, transparent 50%);
     }
     &:nth-child(11) {
-      .cell-triangle(@white, @green, @green, @white);
+      background-image: 
+        linear-gradient(-45deg, @green 50%, transparent 50%),
+        linear-gradient(135deg, @white 50%, transparent 50%);
     }
     &:nth-child(12) {
       background: @red;

@@ -18,14 +18,9 @@
     &:nth-child(4), &:nth-child(6) {
       background: #160607;
     }
-    &:nth-child(5), &:nth-child(8) {
+    &:nth-child(8) {
       background: #fff;
     }
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(5),
-    &:nth-child(7),
     &:nth-child(9),
     &:nth-child(10),
     &:nth-child(11),
@@ -41,25 +36,43 @@
         border: @half solid transparent;
       }
     }
-    &:nth-child(1):after {
-      border-right-color: #000;
-      border-bottom-color: #000;
+    &:nth-child(1) {
+      background-image: linear-gradient(-45deg, #000 50%, transparent 50%);
     }
-    &:nth-child(2):after {
-      border-left-color: #000;
-      border-right-color: #000;
-      border-bottom-color: #7e9ecf; 
+    &:nth-child(2) {
+      background-image: 
+        linear-gradient(-45deg, #000 50%, transparent 50%),
+        linear-gradient(45deg, #000 50%, transparent 50%);
+      &:after, &:before {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        bottom: 0;
+      }
+      &:after {
+        right: 0;
+        background-image: 
+          linear-gradient(45deg, #7e9ecf 50%, transparent 50%); 
+      }
+      &:before {
+        left: 0;
+        background-image: 
+          linear-gradient(-45deg, #7e9ecf 50%, transparent 50%);  
+      }
     }
-    &:nth-child(3):after {
-      border-left-color: #000;
-      border-bottom-color: #000;
+    &:nth-child(3) {
+      background-image: linear-gradient(45deg, #000 50%, transparent 50%);
     } 
-    &:nth-child(5):after {
-      border-top-color: #7e9ecf;
+    &:nth-child(5) {
+      background-color: #7e9ecf;
+      overflow: hidden;
+      background-image: 
+        linear-gradient(45deg, #fff 50%, transparent 50%),
+        linear-gradient(-45deg, #fff 50%, transparent 50%);
     }
-    &:nth-child(7):after {
-      border-right-color: #000;
-      border-top-color: #000;
+    &:nth-child(7) {
+      background-image: linear-gradient(-135deg, #000 50%, transparent 50%);
     }
     &:nth-child(8):after {
       content: ' ';
@@ -78,9 +91,6 @@
       border-left-color: #000;
       border-top-color: #000;
     }
-    &:nth-child(5) {
-      overflow: hidden;
-    } 
     .ribbon {
       border-left: (@half / 2) solid #aa272f;
       border-bottom: (@half / 2) solid #aa272f;
@@ -108,6 +118,7 @@
     &:nth-child(11),
     &:nth-child(12) {
       height: @bottom-cell-height;
+      
     }
     &:nth-child(10) {
       overflow: hidden;
@@ -132,13 +143,12 @@
       background-color: #613e80;
       z-index: 2;
       &:after {
-        border-width: round(@bottom-cell-height / 2);
-        border-right-color: #613e80; 
-        border-bottom-color: #613e80; 
+        border: none;
+        .size(round(@bottom-cell-height));
+        background-image: linear-gradient(-45deg, #613e80 50%, transparent 50%);
         left: -@bottom-cell-height + 1;
       }
     }
   }
 
 }
- 
