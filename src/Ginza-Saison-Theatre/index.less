@@ -3,7 +3,7 @@
 @initial-width: 390px;
 @initial-height: 490px;
 @dy: @initial-height - (@initial-height / 2.3);
-@dx: @dy * .89;
+@dx: @dy * .85;
 
 
 @pink: #E15BAA; 
@@ -75,7 +75,7 @@
     bottom: 38.7%;
     left: -50%;
     transform-origin: 50% 38.2%;
-    transform: rotate(-30deg);
+    transform: rotate(-20deg);
     &:after, &:before {
       position: absolute;
       content: '';
@@ -107,26 +107,26 @@
     &:after {
       transform-origin: 0 0 ;
       left: 50%;
-      transform: rotate(30deg);
+      transform: rotate(20deg);
     }
     &:before {
       left: -50%;
       transform-origin: 100% 0;
-      transform: rotate(-30deg);
+      transform: rotate(-20deg);
     } 
   }
   .tongue {
     z-index: 2;
     position: absolute;
     left: 50%;
-    top: 15%;
-    .size(@dx / 3.2);
+    top: 12.8%;
+    .size(@dx / 2.9);
     background: @red;
     transform: translateX(-50%);
     &:before, &:after {
       content: '';
       position: absolute;
-      .size(@dx / 3.2, @dx / 3.2 + 20);
+      .size(@dx / 2.9, @dx / 2.9 + 20);
       z-index: 6;
       background: @black;
     }
