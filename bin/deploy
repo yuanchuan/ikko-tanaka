@@ -1,8 +1,0 @@
-#!/bin/sh
-
-git checkout gh-pages
-cp release/* ./
-git add index*
-git commit -am 'sync'
-git push origin gh-pages
-git checkout master
