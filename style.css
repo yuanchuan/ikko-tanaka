@@ -920,8 +920,8 @@ footer {
     justify-content: center;
 
     --size: calc(var(--w) / 24.375);
-    width: var(--mouth-size);
-    height: var(--mouth-size);
+    width: var(--size);
+    height: var(--size);
   }
 
   .print [mouth]:before,
