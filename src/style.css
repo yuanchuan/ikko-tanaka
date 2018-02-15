@@ -60,6 +60,18 @@ main {
 }
 
 
+@keyframes blink {
+  96% {
+    -webkit-clip-path: polygon(-1% 50%, 101% 50%, 101% 50%, -1% 50%);
+            clip-path: polygon(-1% 50%, 101% 50%, 101% 50%, -1% 50%);
+  }
+  94%, 100% {
+    -webkit-clip-path: polygon(-1% -1%, 101% -1%, 101% 101%, -1% 101%);
+            clip-path: polygon(-1% -1%, 101% -1%, 101% 101%, -1% 101%);
+  }
+}
+
+
 .github-corner {
   fill: #151513;
   color: #fff;
@@ -775,6 +787,7 @@ footer {
     width: var(--circle-size);
     height: var(--circle-size);
     border-radius: 50%;
+    animation: blink 3s ease-out infinite;
   }
   .communication-print [eyes]:before {
     background: #7357BC;
@@ -1055,7 +1068,6 @@ footer {
     --size: calc(var(--w) / 21);
     width: var(--size);
     height: var(--size);
-
   }
   .chiba [eyes]:before {
     top: 3%; left: 2%;
