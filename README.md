@@ -4,10 +4,8 @@
 
 ## About
 
-[Ikko Tanaka](https://en.wikipedia.org/wiki/Ikko_Tanaka) is one of my most favorite graphic designers and I love those pictures very much.
+[Ikko Tanaka](https://en.wikipedia.org/wiki/Ikko_Tanaka) was one of my favorite graphic designers and I love his work very much.
 
-This is the **second** time to create them with pure CSS after 4 years.
-Although there are CSS grid and clip-path to use nowadays,
-it's still challenging to make them responsive and deal the sub-pixel problem.
+It's my **second** time to try to create them with pure CSS (after 4 years). Now I can use CSS grid and clip-path instead of hacking with border-width or linear-gradient. But it's still challenging to make them all responsive and deal with the sub-pixel problem in CSS.
 
 Cheers!
